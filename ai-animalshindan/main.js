@@ -28,6 +28,18 @@ function showResult(char) {
   result.classList.add('visible');
 }
 
+document.getElementById('date').addEventListener('input', (e) => {
+  const el = e.target;
+  const converted = el.value
+    .replace(/[０-９]/g, s => String.fromCharCode(s.charCodeAt(0) - 0xFEE0))
+    .replace(/[^0-9]/g, '');
+  if (el.value !== converted) {
+    const pos = el.selectionStart - (el.value.length - converted.length);
+    el.value = converted;
+    el.setSelectionRange(pos, pos);
+  }
+});
+
 document.getElementById('date').addEventListener('keydown', (e) => {
   if (e.key === 'Enter') document.getElementById('btn').click();
 });
