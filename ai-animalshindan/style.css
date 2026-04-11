@@ -1,0 +1,144 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+  background: linear-gradient(135deg, #ffe0f0 0%, #fce4ec 50%, #f8e8ff 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(220, 80, 140, 0.15);
+  padding: 36px 32px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.card-title {
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #e8699a, #d94f8a);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 28px;
+  letter-spacing: 0.05em;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  color: #c0607a;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.form-group input[type="text"] {
+  width: 100%;
+  border: 1.5px solid #f5b8d0;
+  border-radius: 10px;
+  padding: 20px 18px;
+  font-size: 24px;
+  color: #333;
+  outline: none;
+  transition: border-color 0.2s;
+  letter-spacing: 0.08em;
+}
+
+.form-group input[type="text"]:focus {
+  border-color: #e8699a;
+}
+
+.btn {
+  width: 100%;
+  background: linear-gradient(135deg, #e8699a, #d94f8a);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 13px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+  letter-spacing: 0.05em;
+}
+
+.btn:hover {
+  opacity: 0.88;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* 結果エリア */
+#result {
+  display: none;
+  margin-top: 24px;
+  border: 2px solid #f5a0c0;
+  border-radius: 14px;
+  padding: 20px 16px;
+  text-align: center;
+  background: #fff5f9;
+  animation: fadeIn 0.4s ease;
+}
+
+#result.visible {
+  display: block;
+}
+
+#result img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.result-no {
+  font-size: 12px;
+  color: #c0a0b0;
+  margin-bottom: 4px;
+}
+
+.result-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.result-animal {
+  display: inline-block;
+  background: linear-gradient(135deg, #e8699a, #d94f8a);
+  color: #fff;
+  font-size: 12px;
+  padding: 3px 14px;
+  border-radius: 99px;
+  margin-bottom: 12px;
+}
+
+.result-desc {
+  font-size: 13px;
+  color: #555;
+  text-align: left;
+  line-height: 1.8;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

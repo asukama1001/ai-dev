@@ -1,0 +1,45 @@
+function parseDate(input) {
+  const s = input.replace(/\D/g, '');
+  if (s.length !== 8) return null;
+  const yyyy = s.slice(0, 4);
+  const mm   = s.slice(4, 6);
+  const dd   = s.slice(6, 8);
+  const date = new Date(`${yyyy}-${mm}-${dd}`);
+  if (isNaN(date.getTime())) return null;
+  return date;
+}
+
+function calcCharNo(date) {
+  const serial = date.getTime() / 86400000 + 25569;
+  let no = (Math.floor(serial) + 8) % 60 + 1;
+  if (no === 0) no = 60;
+  return no;
+}
+
+function showResult(char) {
+  const result = document.getElementById('result');
+  result.innerHTML = `
+    <img src="${char.img}" alt="${char.animal}">
+    <div class="result-no">No.${char.no}</div>
+    <div class="result-name">${char.name}</div>
+    <span class="result-animal">${char.animal}</span>
+    <p class="result-desc">${char.desc}</p>
+  `;
+  result.classList.add('visible');
+}
+
+document.getElementById('date').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') document.getElementById('btn').click();
+});
+
+document.getElementById('btn').addEventListener('click', () => {
+  const input = document.getElementById('date').value.trim();
+  const date = parseDate(input);
+  if (!date) {
+    alert('生年月日を8桁で入力してください（例：19861001）');
+    return;
+  }
+  const no = calcCharNo(date);
+  const char = ANIMALS[no - 1];
+  showResult(char);
+});
