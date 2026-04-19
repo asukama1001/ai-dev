@@ -115,15 +115,15 @@ function showResult(char) {
     .map(k => `<span class="keyword-badge" data-speak="${k}" title="Click to hear pronunciation" style="cursor:pointer;">${k}<span class="keyword-ja">${KEYWORD_JA[k] ?? k}</span></span>`)
     .join('');
   result.innerHTML = `
-    <div class="result-left">
-      <img src="${char.img}" alt="${char.animal}">
-      <div class="keywords">${keywordHTML}</div>
-    </div>
-    <div class="result-right">
+    <img class="result-img" src="${char.img}" alt="${char.animal}">
+    <div class="result-meta">
       <div class="result-no">No.${char.no}</div>
       <div class="result-name" id="speak-name" title="Click to hear pronunciation" style="cursor:pointer;">${char.name} 🔊</div>
       <div class="result-name-ja">${char.name_ja}</div>
       <span class="result-animal">${char.animal} / ${char.animal_ja}</span>
+    </div>
+    <div class="keywords">${keywordHTML}</div>
+    <div class="result-desc-wrap">
       <p class="result-desc">${char.desc}</p>
       <p class="result-desc result-desc-ja">${char.desc_ja}</p>
     </div>

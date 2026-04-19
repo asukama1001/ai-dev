@@ -111,48 +111,60 @@ body {
   display: block;
 }
 
-#result img {
-  width: 180px;
-  height: 180px;
+/* モバイル: 画像→名前→キーワード→説明の縦並び */
+.result-img {
+  display: block;
+  width: 160px;
+  height: 160px;
   object-fit: contain;
-  margin-bottom: 8px;
+  margin: 0 auto 8px;
 }
 
-.result-left {
+.result-meta {
   text-align: center;
+  margin-bottom: 12px;
 }
 
-.result-right {
-  text-align: center;
+.result-desc-wrap {
+  text-align: left;
 }
 
+/* タブレット/PC: グリッドで画像+KW左・名前+説明右 */
 @media (min-width: 481px) {
   #result.visible {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 8px 24px;
+    text-align: left;
   }
 
-  .result-left {
+  .result-img {
+    grid-column: 1;
+    grid-row: 1;
     width: 160px;
-    flex-shrink: 0;
-    text-align: center;
+    height: 160px;
+    margin: 0 auto 8px;
   }
 
-  .result-left .keywords {
+  .result-meta {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  .keywords {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: start;
     justify-content: center;
   }
 
-  #result img {
-    width: 160px;
-    height: 160px;
-    margin-bottom: 8px;
-  }
-
-  .result-right {
-    flex: 1;
-    text-align: left;
+  .result-desc-wrap {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
   }
 }
 
@@ -306,18 +318,15 @@ body {
     padding: 16px;
   }
 
-  .result-left {
-    width: 200px;
+  #result.visible {
+    grid-template-columns: 200px 1fr;
+    gap: 12px 32px;
+    padding: 24px;
   }
 
-  #result img {
+  .result-img {
     width: 190px;
     height: 190px;
-  }
-
-  #result.visible {
-    gap: 28px;
-    padding: 24px;
   }
 
   .result-name {
