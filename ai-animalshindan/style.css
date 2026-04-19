@@ -146,8 +146,50 @@ body {
 /* iPad (481px - 1024px) */
 @media (min-width: 481px) and (max-width: 1024px) {
   .card {
-    max-width: 600px;
-    padding: 44px 40px;
+    max-width: 520px;
+    padding: 40px 36px;
+  }
+
+  .card-title {
+    font-size: 18px;
+    padding: 16px;
+    margin-bottom: 28px;
+  }
+
+  .form-group label {
+    font-size: 14px;
+  }
+
+  .form-group input[type="text"] {
+    font-size: 26px;
+    padding: 20px 18px;
+  }
+
+  .btn {
+    font-size: 17px;
+    padding: 15px;
+  }
+
+  #result img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .result-name {
+    font-size: 20px;
+  }
+
+  .result-desc {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+}
+
+/* PC (1025px+) */
+@media (min-width: 1025px) {
+  .card {
+    max-width: 640px;
+    padding: 48px 52px;
   }
 
   .card-title {
@@ -161,7 +203,7 @@ body {
   }
 
   .form-group input[type="text"] {
-    font-size: 30px;
+    font-size: 28px;
     padding: 22px 20px;
   }
 
@@ -171,76 +213,8 @@ body {
   }
 
   #result img {
-    width: 220px;
-    height: 220px;
-  }
-
-  .result-name {
-    font-size: 22px;
-  }
-
-  .result-desc {
-    font-size: 15px;
-    line-height: 1.9;
-  }
-}
-
-/* PC (1025px+) */
-@media (min-width: 1025px) {
-  body {
-    align-items: center;
-    padding: 48px 24px;
-  }
-
-  .card {
-    max-width: 900px;
-    padding: 48px 52px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto 1fr;
-    column-gap: 52px;
-  }
-
-  .card-title {
-    grid-column: 1 / -1;
-    font-size: 22px;
-    padding: 20px;
-    margin-bottom: 36px;
-  }
-
-  .form-group {
-    grid-column: 1;
-    grid-row: 2;
-    align-self: start;
-  }
-
-  .form-group label {
-    font-size: 15px;
-  }
-
-  .form-group input[type="text"] {
-    font-size: 30px;
-    padding: 22px 20px;
-  }
-
-  .btn {
-    grid-column: 1;
-    grid-row: 3;
-    align-self: start;
-    font-size: 18px;
-    padding: 16px;
-  }
-
-  #result {
-    grid-column: 2;
-    grid-row: 2 / 4;
-    margin-top: 0;
-    align-self: start;
-  }
-
-  #result img {
-    width: 260px;
-    height: 260px;
+    width: 240px;
+    height: 240px;
   }
 
   .result-name {
