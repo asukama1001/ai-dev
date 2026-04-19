@@ -57,7 +57,7 @@ body {
   font-weight: 500;
 }
 
-.form-group input[type="text"] {
+.form-group input[type="tel"] {
   width: 100%;
   border: 1.5px solid #f5b8d0;
   border-radius: 10px;
@@ -69,7 +69,7 @@ body {
   letter-spacing: 0.08em;
 }
 
-.form-group input[type="text"]:focus {
+.form-group input[type="tel"]:focus {
   border-color: #e8699a;
 }
 
@@ -267,7 +267,7 @@ body {
     font-size: 14px;
   }
 
-  .form-group input[type="text"] {
+  .form-group input[type="tel"] {
     font-size: 26px;
     padding: 20px 18px;
   }
@@ -308,7 +308,7 @@ body {
     font-size: 15px;
   }
 
-  .form-group input[type="text"] {
+  .form-group input[type="tel"] {
     font-size: 28px;
     padding: 22px 20px;
   }
