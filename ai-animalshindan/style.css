@@ -47,7 +47,7 @@ body {
   font-weight: 500;
 }
 
-.form-group input[type="tel"] {
+#date {
   width: 100%;
   border: 1.5px solid #f5b8d0;
   border-radius: 10px;
@@ -59,7 +59,7 @@ body {
   letter-spacing: 0.08em;
 }
 
-.form-group input[type="tel"]:focus {
+#date:focus {
   border-color: #e8699a;
 }
 
@@ -202,7 +202,7 @@ body {
     font-size: 14px;
   }
 
-  .form-group input[type="tel"] {
+  #date {
     font-size: 26px;
     padding: 20px 18px;
   }
@@ -243,7 +243,7 @@ body {
     font-size: 15px;
   }
 
-  .form-group input[type="tel"] {
+  #date {
     font-size: 28px;
     padding: 22px 20px;
   }
