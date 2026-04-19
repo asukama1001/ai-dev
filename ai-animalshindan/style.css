@@ -101,6 +101,12 @@ body {
   display: block;
 }
 
+@media (min-width: 481px) {
+  #result.visible {
+    display: flex;
+  }
+}
+
 #result img {
   width: 180px;
   height: 180px;
