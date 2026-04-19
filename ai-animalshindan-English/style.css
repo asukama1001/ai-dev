@@ -290,8 +290,8 @@ body {
 /* PC (1025px+) */
 @media (min-width: 1025px) {
   .card {
-    max-width: 820px;
-    padding: 48px 52px;
+    max-width: 720px;
+    padding: 48px 48px;
   }
 
   .card-title {
@@ -335,6 +335,6 @@ body {
 
   .result-desc {
     font-size: 15px;
-    line-height: 1.9;
+    line-height: 1.7;
   }
 }
