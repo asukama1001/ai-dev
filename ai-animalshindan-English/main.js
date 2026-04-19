@@ -116,13 +116,15 @@ function showResult(char) {
     .join('');
   result.innerHTML = `
     <img src="${char.img}" alt="${char.animal}">
-    <div class="result-no">No.${char.no}</div>
-    <div class="result-name" id="speak-name" title="Click to hear pronunciation" style="cursor:pointer;">${char.name} 🔊</div>
-    <div class="result-name-ja">${char.name_ja}</div>
-    <span class="result-animal">${char.animal} / ${char.animal_ja}</span>
-    <div class="keywords">${keywordHTML}</div>
-    <p class="result-desc">${char.desc}</p>
-    <p class="result-desc result-desc-ja">${char.desc_ja}</p>
+    <div class="result-text">
+      <div class="result-no">No.${char.no}</div>
+      <div class="result-name" id="speak-name" title="Click to hear pronunciation" style="cursor:pointer;">${char.name} 🔊</div>
+      <div class="result-name-ja">${char.name_ja}</div>
+      <span class="result-animal">${char.animal} / ${char.animal_ja}</span>
+      <div class="keywords">${keywordHTML}</div>
+      <p class="result-desc">${char.desc}</p>
+      <p class="result-desc result-desc-ja">${char.desc_ja}</p>
+    </div>
   `;
   result.classList.add('visible');
 

@@ -20,13 +20,22 @@ function showResult(char) {
   const result = document.getElementById('result');
   result.innerHTML = `
     <img src="${char.img}" alt="${char.animal}">
-    <div class="result-no">No.${char.no}</div>
-    <div class="result-name">${char.name}</div>
-    <span class="result-animal">${char.animal}</span>
-    <p class="result-desc">${char.desc}</p>
+    <div class="result-text">
+      <div class="result-no">No.${char.no}</div>
+      <div class="result-name">${char.name}</div>
+      <span class="result-animal">${char.animal}</span>
+      <p class="result-desc">${char.desc}</p>
+    </div>
   `;
   result.classList.add('visible');
 }
+
+window.addEventListener('load', () => {
+  ANIMALS.forEach(char => {
+    const img = new Image();
+    img.src = char.img;
+  });
+});
 
 document.getElementById('date').addEventListener('input', (e) => {
   const el = e.target;
