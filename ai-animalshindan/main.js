@@ -19,8 +19,10 @@ function calcCharNo(date) {
 function showResult(char) {
   const result = document.getElementById('result');
   result.innerHTML = `
-    <img src="${char.img}" alt="${char.animal}">
-    <div class="result-text">
+    <div class="result-left">
+      <img src="${char.img}" alt="${char.animal}">
+    </div>
+    <div class="result-right">
       <div class="result-no">No.${char.no}</div>
       <div class="result-name">${char.name}</div>
       <span class="result-animal">${char.animal}</span>

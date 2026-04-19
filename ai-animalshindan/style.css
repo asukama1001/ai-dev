@@ -101,17 +101,39 @@ body {
   display: block;
 }
 
-@media (min-width: 481px) {
-  #result.visible {
-    display: flex;
-  }
-}
-
 #result img {
   width: 180px;
   height: 180px;
   object-fit: contain;
   margin-bottom: 8px;
+}
+
+.result-left {
+  text-align: center;
+}
+
+.result-right {
+  text-align: center;
+}
+
+@media (min-width: 481px) {
+  #result.visible {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    text-align: left;
+  }
+
+  .result-left {
+    flex-shrink: 0;
+    text-align: center;
+  }
+
+  .result-right {
+    flex: 1;
+    text-align: left;
+  }
 }
 
 .result-no {
@@ -191,7 +213,7 @@ body {
     margin-bottom: 0;
   }
 
-  .result-text {
+  .result-right {
     flex: 1;
   }
 
@@ -247,7 +269,7 @@ body {
     margin-bottom: 0;
   }
 
-  .result-text {
+  .result-right {
     flex: 1;
   }
 
