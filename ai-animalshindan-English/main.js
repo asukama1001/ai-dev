@@ -112,12 +112,12 @@ function calcCharNo(date) {
 function showResult(char) {
   const result = document.getElementById('result');
   const keywordHTML = char.keywords
-    .map(k => `<span class="keyword-badge">${k}<span class="keyword-ja">${KEYWORD_JA[k] ?? k}</span></span>`)
+    .map(k => `<span class="keyword-badge" data-speak="${k}" title="Click to hear pronunciation" style="cursor:pointer;">${k}<span class="keyword-ja">${KEYWORD_JA[k] ?? k}</span></span>`)
     .join('');
   result.innerHTML = `
     <img src="${char.img}" alt="${char.animal}">
     <div class="result-no">No.${char.no}</div>
-    <div class="result-name">${char.name}</div>
+    <div class="result-name" id="speak-name" title="Click to hear pronunciation" style="cursor:pointer;">${char.name} 🔊</div>
     <div class="result-name-ja">${char.name_ja}</div>
     <span class="result-animal">${char.animal} / ${char.animal_ja}</span>
     <div class="keywords">${keywordHTML}</div>
@@ -125,6 +125,33 @@ function showResult(char) {
     <p class="result-desc result-desc-ja">${char.desc_ja}</p>
   `;
   result.classList.add('visible');
+
+  const speak = (text) => {
+    if (!window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = 'en-US';
+    utter.rate = 0.65;
+    utter.pitch = 1.2;
+    const setVoice = () => {
+      const voices = window.speechSynthesis.getVoices();
+      const female = voices.find(v => v.lang.startsWith('en') && /samantha|zira|victoria|karen|moira|fiona|female|woman/i.test(v.name))
+        || voices.find(v => v.lang.startsWith('en'));
+      if (female) utter.voice = female;
+      window.speechSynthesis.speak(utter);
+    };
+    if (window.speechSynthesis.getVoices().length) {
+      setVoice();
+    } else {
+      window.speechSynthesis.onvoiceschanged = setVoice;
+    }
+  };
+
+  document.getElementById('speak-name').addEventListener('click', () => speak(char.name));
+
+  document.querySelectorAll('.keyword-badge[data-speak]').forEach(el => {
+    el.addEventListener('click', () => speak(el.dataset.speak));
+  });
 }
 
 document.getElementById('date').addEventListener('input', (e) => {
