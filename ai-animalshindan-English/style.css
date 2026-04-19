@@ -237,7 +237,7 @@ body {
 /* iPad (481px - 1024px) */
 @media (min-width: 481px) and (max-width: 1024px) {
   .card {
-    max-width: 560px;
+    max-width: 660px;
     padding: 40px 36px;
   }
 
@@ -278,7 +278,7 @@ body {
 /* PC (1025px+) */
 @media (min-width: 1025px) {
   .card {
-    max-width: 680px;
+    max-width: 820px;
     padding: 48px 52px;
   }
 
