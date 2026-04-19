@@ -176,8 +176,7 @@ body {
     padding: 15px;
   }
 
-  #result {
-    display: flex;
+  #result.visible {
     flex-direction: row;
     align-items: flex-start;
     gap: 20px;
@@ -233,8 +232,7 @@ body {
     padding: 16px;
   }
 
-  #result {
-    display: flex;
+  #result.visible {
     flex-direction: row;
     align-items: flex-start;
     gap: 28px;
