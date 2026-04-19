@@ -133,7 +133,7 @@ body {
 @media (min-width: 481px) {
   #result.visible {
     display: grid;
-    grid-template-columns: 160px 1fr;
+    grid-template-columns: 30% 1fr;
     grid-template-rows: auto 1fr;
     gap: 8px 24px;
     text-align: left;
@@ -142,8 +142,10 @@ body {
   .result-img {
     grid-column: 1;
     grid-row: 1;
-    width: 160px;
-    height: 160px;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    aspect-ratio: 1;
     margin: 0 auto 8px;
   }
 
@@ -320,14 +322,8 @@ body {
   }
 
   #result.visible {
-    grid-template-columns: 200px 1fr;
     gap: 12px 32px;
     padding: 24px;
-  }
-
-  .result-img {
-    width: 190px;
-    height: 190px;
   }
 
   .result-name {
