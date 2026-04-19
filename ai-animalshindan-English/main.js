@@ -158,6 +158,10 @@ function showResult(char) {
   });
 }
 
+document.getElementById('date').addEventListener('beforeinput', (e) => {
+  if (e.data && !/^[0-9０-９]+$/.test(e.data)) e.preventDefault();
+});
+
 document.getElementById('date').addEventListener('input', (e) => {
   const el = e.target;
   const converted = el.value
